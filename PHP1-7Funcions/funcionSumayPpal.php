@@ -7,7 +7,7 @@ function suma ($x,$y){
 
 //asignación de variables
 $a=10;
-$b=15;
+$b=20;
 
 echo "Asignamos valores a las variables:<br>";
 echo "\$a= " .$a ."<br>";
