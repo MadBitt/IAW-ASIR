@@ -16,7 +16,7 @@ function funcionCreaEmail ($usu, $arr, $dom, &$salida){
 
 $usu="lwtstudent";
 $arr="@";
-$dom="gmail.cat";
+$dom="gmail.com";
 $salida= " ";
 
 funcionCreaEmail($usu, $arr, $dom, $salida);

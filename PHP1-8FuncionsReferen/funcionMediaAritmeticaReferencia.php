@@ -18,7 +18,7 @@ function mediaValoresRefer ($a,&$b){
     
 }
 $x=10;
-$y=20;
+$y=30;
 
 echo "<b>Programa Principal</b><br>";
 echo "El valor de los parámetros lo establecemos desde él.<br>";

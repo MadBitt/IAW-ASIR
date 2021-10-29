@@ -7,22 +7,20 @@ function mediaValoresReferArgum ($a,$b,$c,$d,&$e,&$f){
     echo "<b>Estamos en Función Media Aritmética</b><br>";
     echo "<b>=============================</b><br>";
     echo "Valor de los argumentos utilizados:<br>";
-    echo "<ul>";
+   
     
     $args= func_get_args();
   
-    for ($i=0; $i < 1; $i++){
-        for ($x=1; $x < 4; $x++){
-             echo "<li>Parámetro" .$i ."==> $args[$x]</li>";
-            $e+=$args[$i];
-        }
-       
+    for ($i=0; $i <= $numArgs -3; $i++){
+        echo "<ul><li>Parámetro " .($i+1) ."==> $args[$i]</li></ul>";
+        $e+=$args[$i];   
     }
-    echo "</ul>";
+    
+    
     echo "<br>";
-    echo "Valor del parámetro SUMA= <b>$e</b><br>";
+    echo "Valor del parámetro SUMA= $e<br>";
     $f=$e/4;
-    echo "Valor del parámetro MEDIA= <b>$f</b><br>";
+    echo "Valor del parámetro MEDIA= $f<br><br>";
   
        
 }
