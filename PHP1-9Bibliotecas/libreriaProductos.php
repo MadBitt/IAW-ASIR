@@ -2,6 +2,7 @@
 
 function producte ($multiplicant, $multiplicador){
     $res=$multiplicant*$multiplicador;
+    echo "<b>Producto</b><br/>";
     return $res;
 }
 
@@ -9,10 +10,9 @@ function productoVarios (){
     $nArgs= func_num_args();
     $lArgs= func_get_args();
     
-    echo "<b>Función Producto</b><br>";
+    echo "<b>Función Producto Varios</b><br>";
     echo "Número de elementos a multiplicar: $nArgs<p/>";
-    echo "Valores:<br/>";
-    echo "========<br/>(";
+    echo "Valores: (";
     $mult=1;
     for ($i=0; $i<$nArgs; $i++){
         $mult=$mult*$lArgs[$i];
