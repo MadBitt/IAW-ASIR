@@ -5,7 +5,7 @@ include './funcionSumaProducto.php';
 $a=10;
 $b=20;
 
-echo "Asignamos valores qa los dos valores<br/>";
+echo "Asignamos valores a los dos valores<br/>";
 echo "\$a= $a<br/>";
 echo "\$b= $b<p/>";
 

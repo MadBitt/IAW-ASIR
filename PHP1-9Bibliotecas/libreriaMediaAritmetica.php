@@ -3,10 +3,9 @@
 function mediaValores() {
 
     $numArgs = func_num_args();
-    echo "<b>Función Media Aritmética</b><br>";
+    echo "<b>Función Media Valores</b><br>";
+    echo "=================<br/>";
     echo "Número de argumentos utilizados: $numArgs<br><br>";
-    echo "Valor de los argumentos utilizados:";
-    echo "<br>===================<br>";
 
     $arg_list = func_get_args(); {
         $suma = 0;
@@ -15,13 +14,14 @@ function mediaValores() {
             $suma += $arg_list[$i];
         }
         $media = $suma / $numArgs;
-        echo "<b>Valor de la media: " . number_format($media, 2) . "</b>";
+        echo "<b>Valor de la media:" .$media ."</b>";
     }
 }
 
 function mitjana_array($array) {
-    echo "<b>Función Media Aritmética con array</b><br>";
-    echo "Número de elementos del array recibido: " . count($array) . "<br><br>";
+    echo "<b>Función MediaArray</b><br>";
+    echo "=================<br/>";
+    echo "Número de elementos del array recibido: " . count($array) . "<p/>";
     echo "El contenido del array recibido es:<br>";
     print_r($array);
 
@@ -38,7 +38,7 @@ function mediaValoresRefer ($a,&$b){
     
     $numArgs= func_num_args();
     
-    echo "<b>Función ValoresRefer</b><br>";
+    echo "<b>Función Media ValoresRefer</b><br>";
     echo "==========================<br/>";
     echo "Valor de los argumentos utilizados:<br>";
     echo "$a y $b<br>";
@@ -47,7 +47,7 @@ function mediaValoresRefer ($a,&$b){
     
     $suma=$a+$b;
     $b=$suma/2;  
-    printf ("La media de dichos argumentos es: %.2f",$b);
+    printf ("<b>La media de dichos argumentos es: %.2f",$b ."</b>");
     
    
 }

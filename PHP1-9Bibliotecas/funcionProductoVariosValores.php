@@ -1,6 +1,6 @@
 <?php
 
-function productoVarios (){
+function productoValores (){
     $nArgs= func_num_args();
     $lArgs= func_get_args();
     
@@ -25,6 +25,6 @@ function productoVarios (){
 echo "<b>Estamos en Programa Principal</b><br>";
 echo "El valor de los parámetros lo establecemos desde él<br>";
 echo "Hacemos la llamada a la función...<p/>";
-productoVarios(6,5,4,3,2,1);
+productoValores(6,5,4,3,2,1);
 
 
