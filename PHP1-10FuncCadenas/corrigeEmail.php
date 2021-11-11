@@ -8,6 +8,10 @@ function compruebaEmail ($string){
     $puntoCom= explode(".", $string);
     $puntoIz= explode("@", $puntoCom[0]);
     
+    $comSin=explode(".", trim($string));
+    
+    
+    
     if (strstr($string, "@") 
         && strlen($arrobaCom[0]) > 0 
         && strlen($arrobaDr[0]) > 0
@@ -25,22 +29,19 @@ function compruebaEmail ($string){
             echo "Hasta ahora<br/>";
             echo "email=$string<p/>";
 
-                if ($puntoCom[1] == "com"){
+                if ($comSin[1] == "com"){
                     echo "Buscamos .com en email...<br/>";
                     echo "Hemos encontrado <b>com</b><br/>";
-                    echo "Dirección corregida:'" .trim($string) ."'";
+                    echo "Dirección corregida: '" .$comSin[0] .".es'";
                 }
 
         }   
-    
-    
-    
+
     }
-     
-    
+ 
 }
 
-$email=" nombreApellido@ggggggmail.com ";
+$email="    nombreApellido@ggggggmail.com    ";
 
 compruebaEmail($email);
 

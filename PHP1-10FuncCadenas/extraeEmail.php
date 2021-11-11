@@ -9,8 +9,8 @@ function compruebaEmail ($string){
     $puntoIz= explode("@", $puntoCom[0]);
     
     
-    if (strstr($string, "@") 
-        && strlen($arrobaCom[0]) > 0 
+    if  (
+        strlen($arrobaCom[0]) > 0 
         && strlen($arrobaDr[0]) > 0
         && strlen($puntoCom[1]) > 0
         ){
