@@ -41,7 +41,7 @@ function compruebaEmail ($string){
  
 }
 
-$email="    nombreApellido@ggggggmail.com    ";
+$email=" nombreApellido@ggggggmail.com";
 
 compruebaEmail($email);
 
