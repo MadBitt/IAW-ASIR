@@ -7,7 +7,7 @@ $a=3;
 $b=4;
 
 echo "Asignamos valores a los dos valores<br/>";
-echo "\$a= $a<br/<";
+echo "\$a= $a<br/>";
 echo "\$b= $b<p/>";
 
 echo "Llamada a Función <b>Potencia Recursiva</b><br/>";

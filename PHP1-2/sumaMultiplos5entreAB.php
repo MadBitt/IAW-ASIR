@@ -12,7 +12,7 @@
             
             //Variables
             $a=5;
-            $b=-50;
+            $b=50;
             $ini=1;
             $suma=0;
             
