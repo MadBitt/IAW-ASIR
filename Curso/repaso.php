@@ -9,6 +9,3 @@ while($var){
     echo "<ul><li>$var</li></ul>";
     $var=next($personas);
 }
-
-
-
