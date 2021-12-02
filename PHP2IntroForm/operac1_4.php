@@ -24,10 +24,10 @@ echo "El resto de la división vale: $mod<p/>";
 //Operaciones lógicas
 
 echo "<h2>Las operaciones LÓGICAS son</h2>";
-if ($n1==true && $n2==true){
+if ($n1&&$n2){
     echo "AND de los números: " .true ."<br/>";
 }
-if ($n1==true || $n2==true){
+if ($n1||$n2){
     echo "OR de los números: " .true ."<br/>";
 }
 
