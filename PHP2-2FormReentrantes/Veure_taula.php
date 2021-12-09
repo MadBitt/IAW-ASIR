@@ -1,7 +1,7 @@
 <html>
     <head>
         <?php $num=$_GET['numero'];?>
-        <title>Tabla de multiplicar de <?php$num?></title>
+        <title>Tabla de multiplicar del <?php echo $num;?></title>
         <style>
             table, td{
                 border: 1px solid black;
