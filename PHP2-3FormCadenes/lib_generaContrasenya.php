@@ -3,13 +3,13 @@
 function generaPassword ($longBasicos, $longEspeciales){
    
     //Creación de string básica y especial
-    $basica="abcdefghijklmnopqrs";
+    $basica="abcdefghijklmnopqrstu";
     $especial="[])(?!)";
     
     //Creación de basicaPass y EspecialPass
     $basicaPass="";
     for ($i=1;$i<=$longBasicos;$i++){
-        $x= rand(0, strlen($basica)-1);
+        $x= rand(0, strlen($basica));
         $y= substr($basica, $x,1);
         $basicaPass.=$y;
     }
@@ -37,11 +37,3 @@ function generaPassword ($longBasicos, $longEspeciales){
 }
 }
 
-//Programa Principal
-//Recogida de variables de formulario
-$longBasicos=$_POST['LongBasicos'];
-$longEspeciales=$_POST['LongEspeciales'];
-
-
-//Invocar función
-generaPassword($longBasicos, $longEspeciales);

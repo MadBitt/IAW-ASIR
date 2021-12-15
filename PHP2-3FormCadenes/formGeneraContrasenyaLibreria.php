@@ -1,11 +1,10 @@
-
 <html>
     <head>
         <title>Generador de contraseña</title>
     </head>
     <body>
         <table>
-            <form name="GeneraContrasenya" action="GeneraContrasenyaFuncion.php" method="POST">
+            <form name="GeneraContrasenya" action="generaContrasenyaLibreria.php" method="POST">
 
                 <tr><td>Long. de Básicos</td> <td><input type="text" name="LongBasicos" value="" size="20" /></td></tr>
                 <tr><td>Long. de Especiales</td> <td><input type="text" name="LongEspeciales" value="" size="20" /></td></tr>
@@ -22,4 +21,3 @@
     </body>
         
 </html>
-
