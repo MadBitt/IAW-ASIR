@@ -36,16 +36,11 @@
         <b>Tablas de multiplicar autollamante</b><p/>
         <table class="tabla_ini">
             <tbody>
-            <tr><td><a href="Ejer_multiplicarSelf.php?numero=1">Ver la tabla del 1</a></td></tr>
-            <tr><td><a href="Ejer_multiplicarSelf.php?numero=2">Ver la tabla del 2</a></td></tr>
-            <tr><td><a href="Ejer_multiplicarSelf.php?numero=3">Ver la tabla del 3</a></td></tr>
-            <tr><td><a href="Ejer_multiplicarSelf.php?numero=4">Ver la tabla del 4</a></td></tr>
-            <tr><td><a href="Ejer_multiplicarSelf.php?numero=5">Ver la tabla del 5</a></td></tr>
-            <tr><td><a href="Ejer_multiplicarSelf.php?numero=6">Ver la tabla del 6</a></td></tr>
-            <tr><td><a href="Ejer_multiplicarSelf.php?numero=7">Ver la tabla del 7</a></td></tr>
-            <tr><td><a href="Ejer_multiplicarSelf.php?numero=8">Ver la tabla del 8</a></td></tr>
-            <tr><td><a href="Ejer_multiplicarSelf.php?numero=9">Ver la tabla del 9</a></td></tr>
-            <tr><td><a href="Ejer_multiplicarSelf.php?numero=10">Ver la tabla del 10</td></tr></a>    
+                <?php
+                for ($i=1; $i<11; $i++){
+                    echo "<tr><td><a href='Ejer_multiplicarSelf.php?numero=$i'>Ver la tabla del $i</a></td></tr>";
+                }
+                ?>   
             </tbody>
         </table>
     </body>
