@@ -1,47 +1,39 @@
 <?php
 
-function generaPassword ($longBasicos, $LongEspeciales){
+function generaPassword ($longBasicos, $longEspeciales){
    
     //Creación de string básica y especial
-    $basica="abcd";
+    $basica="abcdefghijklmnopqrstu";
     $especial="[])(?!)";
     
     //Creación de basicaPass y EspecialPass
     $basicaPass="";
     for ($i=1;$i<=$longBasicos;$i++){
-        $x= rand(0, $strlen($basica));
+        $x= rand(0, strlen($basica));
         $y= substr($basica, $x,1);
         $basicaPass.=$y;
     }
     
     $especialPass="";
     for ($i=1;$i<=$longEspeciales;$i++){
-        $x= rand(0, $strlen($especial));
+        $x= rand(0, strlen($especial)-1);
         $y= substr($especial, $x,1);
         $especialPass.=$y;
     }
     
     //concatenación
-    $opt=$_POST['option'];
+    $Ord=$_POST['option'];
     
     if ($Ord=="BasicosEspe"){
-    $pass=$bascPass .$espPass;
+    $pass=$basicaPass .$especialPass;
     echo "<b>El password generado aleatoriamente es:<p/>";
     echo $pass ."</b>";
 }
 
     else {
-    $pass=$espPass .$bascPass;
+    $pass=$especialPass .$basicaPass;
     echo "<b>El password generado aleatoriamente es:<p/>";
     echo $pass ."</b>";
 }
 }
 
-//Programa Principal
-//Recogida de variables de formulario
-$longBasicos=$_POST['LongBasicos'];
-$longEspeciales=$_POST['LongEspeciales'];
-
-
-//Invocar función
-generaPassword($longBasicos, $LongEspeciales);
