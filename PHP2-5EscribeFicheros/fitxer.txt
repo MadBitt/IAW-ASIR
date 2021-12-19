@@ -4,3 +4,6 @@ Buenas noches<br/>
 Buenos días<br/>
 Buenas tardes<br/>
 Buenas noches<br/>
+Buenos días<br/>
+Buenas tardes<br/>
+Buenas noches<br/>

@@ -7,7 +7,7 @@ echo "<b>Se AÑADEN datos cada vez que ejecutamos</b><p/>";
 
 $nom="fitxer.txt";
 
-$fp=fopen($nom,"a");
+$fp=fopen($nom,"a+");
 
     fwrite($fp, "Buenos días<br/>\n");
     fwrite($fp, "Buenas tardes<br/>\n");

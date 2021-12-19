@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Ejercicio 4</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            table, td, th {
+                border: 1px solid black;
+                border-collapse: collapse
+            }
+        </style>
+    </head>
+    <body>
+        <b>Escritura en fichero txt</b><p/>
+        <form name="ejer4" action="peticiones2_4.php" method="POST">
+      
+        <table>
+            <thead>
+                <tr>
+                    <th>Elementos</th>
+                    <th style="text-align:center">Cantidad</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Frenos</td>
+                    <td><input type="text" name="cFrenos" value="" /></td>
+                </tr>
+                <tr>
+                    <td>Aceite</td>
+                    <td><input type="text" name="cAceite" value="" /></td>
+                </tr>
+                <tr>
+                    <td>Ruedas</td>
+                    <td><input type="text" name="cRuedas" value="" /></td>
+                </tr>
+                <tr>
+                    <td>Nombre</td>
+                    <td><input type="text" name="nom" value="" /></td>
+                </tr>
+                <tr>
+                    <td>Dirección</td>
+                    <td><input type="text" name="dir" value="" /></td>
+                </tr>
+                <tr>
+                    <td colspan="2" style="text-align: center"><input type="submit" value="Enviar" name="botEnv" /></td>
+                </tr>
+            </tbody>
+        </table>
+        </form>
+    </body>
+</html>
