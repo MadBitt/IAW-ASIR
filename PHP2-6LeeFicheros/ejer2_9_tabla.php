@@ -1,4 +1,10 @@
 <?php
+//Ubicación de txt y fecha con getdate()
+$file="ejer2_9_tabla.txt";
+
+$fecha=getdate();
+$hoy=$fecha["mday"] ."/" .$fecha["mon"] ."/" .$fecha["year"];
+
 //Texto plano
 echo "Contenido del fichero $file hasta la fecha de hoy ($hoy)<p/>";
 ?>
@@ -28,32 +34,44 @@ echo "Contenido del fichero $file hasta la fecha de hoy ($hoy)<p/>";
                     <th>Ruedas</th>
                 </tr>
             </thead>
+            <tbody>
+                <?php
+
+                //Manipulación de txt
+
+               $fp=fopen($file, "r");
+               $word="";
+                while (!feof($fp)){
+                    
+                    $char=fgetc($fp);
+                    $word=$word .$char;
+                    if ($char == "\t"){
+                        echo "<td>";
+                        echo $word;
+                        echo "</td>";
+                        $word="";
+                    }
+                    elseif ($char == "\n"){
+                        echo "<td>";
+                        echo $word;
+                        echo "</td>";
+                        echo "</tr>";
+                        $word="";
+                    }
+                   
+                    }
+                        echo "<td>";
+                        echo $word;
+                        echo "</td>";
+                        echo "</tr>";
+                fclose($fp);
+                ?> 
+            </tbody>
         </table>
         
     </body>
 </html>
 
-<?php
 
-//Ubicación de txt y fecha con getdate()
-$file="ejer2_9_tabla.txt";
-
-$fecha=getdate();
-$hoy=$fecha["mday"] ."/" .$fecha["mon"] ."/" .$fecha["year"];
-
-
-
-//Manipulación de txt
-
-$fp=fopen($file, "r");
-while (!feof($fp)){
-    echo "<tr>";
-    echo "<td>";
-    $char=fgetc($fp);
-    echo $char;
-    echo "</td>";
-    echo "</tr>";
-}
-fclose($fp);
 
 
