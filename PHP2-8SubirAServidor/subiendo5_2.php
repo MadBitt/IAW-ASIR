@@ -6,7 +6,11 @@ $nomReal=$_FILES['subir']['name'];
 
 
 //Ruta de subida
-$uploadDir=$uploadDir="D:\\PROJECTS_PHP_IAW\\IAW-ASIR\\PHP2-8SubirAServidor\\UPLOADS\\";
+//Ruta para Windows
+//$uploadDir="D:\\PROJECTS_PHP_IAW\\IAW-ASIR\\PHP2-8SubirAServidor\\UPLOADS\\";
+//Ruta para Linux
+$uploadDir="/home/bitt/Documents/apache/IAW-ASIR/PHP2-8SubirAServidor/UPLOADS/";
+
 
 //Variables a utilizar
 $nomFinal= "up_" .$nomReal;
@@ -20,10 +24,12 @@ if (@opendir($uploadDir)){
     
     if (move_uploaded_file($nomTemporal, $uploadDir .$nomFinal)){
         echo "Nombre y ruta completa del archivo: <b>$uploadDir$nomFinal</b><br/>";
-        echo "Si existe el directorio <b>$uploadDir</b>";
+        echo "Si existe el directorio <b>$uploadDir</b><br/>";
+        echo "Nombre de Fichero: <b>$nomFinal</b> válido<br/>";
+        echo "Carga realizada con éxito!";
     }    
 }
 else {
-    echo "Error. No existe el directorio $uploadDir";
+    echo "Error. No existe el directorio <b>$uploadDir</b>";
 }
 

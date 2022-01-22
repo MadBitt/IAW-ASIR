@@ -4,12 +4,9 @@
 echo "versión con shell_exec <br>";
 echo "FECHA<br>";
 
-$date= shell_exec ('date /t');
-$separado= explode("/", $date);
+$date= shell_exec ('date ');
 
-
-$time= shell_exec ('time /t');
-echo $time .$date;
+echo $date;
 
 
 
