@@ -1,16 +1,22 @@
 <!DOCTYPE html>
-<!--
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
--->
+
 <html>
     <head>
-        <title>TODO supply a title</title>
+        <title>5.7</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
     <body>
-        <div>TODO write content</div>
+        <h3>ejercicio 5.7</h3>
+        <b>El fichero se ubica en el directorio /doc</b><p/>
+        <b>La descripción del fichero en el directorio /dsc</b><p/>
+        
+        <div>
+            <form enctype="multipart/form-data" method="post" action="subiendo5_7.php">
+                Selecciona el fichero:<input type="file" name="subir"/><p/>
+                Descripción del fichero:<input type="text" name="desc"/><p/>
+                <input type="submit" name="submit" value="Enviar el fichero"/>
+            </form>
+        </div>
     </body>
 </html>
