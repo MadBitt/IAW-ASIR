@@ -8,11 +8,12 @@ $nomFinal= "up_" .$name;
 
 //Carpeta dsc y comandos sistema Linux
 $carpetaDsc="descripciones.dsc";
-$fecha= exec('date +%d/%m/%Y');
-$hora= exec('date +%H:%M');
+//$fecha= exec('date +%d/%m/%Y');
+//$hora= exec('date +%H:%M');
 
 //Comandos de sistema Windows
-
+$fecha= exec('date /t');
+$hora= exec('time /t');
 
 //Rutas
 $uploadDir="doc/";
@@ -34,17 +35,17 @@ elseif (empty($tmp)){
 
 else{
    //Ya hemos comprobado que ambos están rellenados
-    if (opendir($uploadDir)){
+    if (@opendir($uploadDir)){
         //doc existe, realizamos la subida
         if (move_uploaded_file($tmp, $uploadDir.$nomFinal)){
             //La subida se ha realizado
             echo "Subida realizada!.<p/>";    
-            if (opendir($DescDir)){
+            if (@opendir($DescDir)){
                 //dsc existe, añadimos la descripción
-                echo "cc";
+                
                 echo "Añadimos descripción introducida al archivo dsc/descripciones.dsc<p/>";
                 $fp=fopen($DescDir.$carpetaDsc, "a+");
-                    fwrite($fp, $fecha ."\t" .$hora ."\t" .$desc ."\n");
+                    fwrite($fp, $fecha ."\t" ."($hora)" ."\t" .$desc ."\n");
                     
                 fclose($fp); 
                 echo "<b>Se ha escrito toda la información en el fichero</b>";
@@ -52,13 +53,15 @@ else{
             }
             else {
                 //dsc no existe, lo creamos
+                echo "No existe el directorio dsc/<br/>";
+                echo "Vamos a crearlo...<p/>";
                 mkdir($DescDir, 0777);
                 chmod($DescDir, 0777);
                 //añadimos la descripción
                 echo "Añadimos descripción introducida al archivo dsc/descripciones.dsc<p/>";
                 
                 $fp=fopen($DescDir.$carpetaDsc, "a+");
-                    fwrite($fp, $fecha ."\t" .$hora ."\t" .$desc ."\n");
+                    fwrite($fp, $fecha ."\t" ."($hora)" ."\t" .$desc ."\n");
                 fclose($fp);           
                 echo "<b>Se ha escrito toda la información en el fichero</b>";
             }     
@@ -74,23 +77,25 @@ else{
         if (move_uploaded_file($tmp, $uploadDir .$nomFinal)){
             //La subida se ha realizado
             echo "Subida realizada!.<p/>";    
-            if (opendir($DescDir)){
+            if (@opendir($DescDir)){
                 //dsc existe, añadimos la descripción
                 
                 echo "Añadimos descripción introducida al archivo dsc/descripciones.dsc<p/>";
                 $fp=fopen($DescDir.$carpetaDsc, "a+");
-                    fwrite($fp, $fecha ."\t" .$hora ."\t" .$desc ."\n");       
+                    fwrite($fp, $fecha ."\t" ."($hora)" ."\t" .$desc ."\n");       
                 fclose($fp);
                 echo "<b>Se ha escrito toda la información en el fichero</b>";
             }
             else {
                 //dsc no existe, lo creamos
+                echo "No existe el directorio dsc/<br/>";
+                echo "Vamos a crearlo...<p/>";
                 mkdir($DescDir, 0777);
                 chmod($DescDir, 0777);
                 //añadimos la descripción
                 echo "Añadimos descripción introducida al archivo dsc/descripciones.dsc<p/>";
                 $fp=fopen($DescDir.$carpetaDsc, "a+");
-                    fwrite($fp, $fecha ."\t" .$hora ."\t" .$desc ."\n");    
+                    fwrite($fp, $fecha ."\t" ."($hora)" ."\t" .$desc ."\n");    
                 fclose($fp);
                 echo "<b>Se ha escrito toda la información en el fichero</b>";          
             }
