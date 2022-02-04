@@ -4,6 +4,9 @@
 $campo=$_POST['campo'];
 $consulta=$_POST['consulta'];
 
+echo $campo;
+echo "<br/>";
+echo $consulta;
 //Comprobación campo consulta
 if (empty($consulta)){
     echo "Debes introducir almenos un caracter";
@@ -19,8 +22,17 @@ $conn= mysqli_connect($server, $user, $pass, $db);
 //Consulta
 $sql="SELECT * FROM books WHERE $campo LIKE '%$consulta%'";
 
-while ($result=mysqli_query($conn, $sql)){
-    $row= mysqli_fetch_assoc($result);
-    echo "Número de filas recuperadas: $result";
-    
+if ($query=mysqli_query($conn, $sql)){
+    while ($rows= mysqli_fetch_assoc($select)){
+        echo $rows['isb']. "<br/>";
+        echo $rows['author']. "<br/>";
+        echo $rows['title']. "<br/>";
+        echo $rows['price']. "<p/>";     
+    }
 }
+else {
+    echo "no va";
+}
+
+    
+    
