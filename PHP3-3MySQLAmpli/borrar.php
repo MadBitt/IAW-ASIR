@@ -50,6 +50,7 @@
                 echo "Error: (" .mysqli_errno($conn) .") " .mysqli_error($conn);
             }
         }
+        mysqli_close($conn);
         
         echo "</p>";
         
