@@ -102,6 +102,9 @@
                     </td>
                 </tr>
             </table>
+            <?php
+                mysqli_close($conn);
+            ?>
         </form>
        
     </body>
