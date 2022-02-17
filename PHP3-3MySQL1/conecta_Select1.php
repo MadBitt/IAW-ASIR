@@ -20,5 +20,11 @@ if ($conn){
             echo "<br/>";
         }
     }
+    else{
+    echo "Error (" .mysqli_errno($conn) .") " .mysqli_error($conn);
+}
+}
+else{
+    echo "Error (" .mysqli_errno($conn) .") " .mysqli_error($conn);
 }
 mysqli_close($conn);

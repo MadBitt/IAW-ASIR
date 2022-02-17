@@ -43,9 +43,10 @@
             ."SET nombre='$name', telefono='$tlf' "
             ."WHERE id=$id";
             
-            if (mysqli_query($conn, $sql)){
-            
-                printf("Filas modificadas= %d", mysqli_affected_rows($conn));
+            if (mysqli_query($conn, $sql)){       
+                
+                    printf("Filas modificadas= %d", mysqli_affected_rows($conn));
+                
             }
             else{
                 echo "Error (" .mysqli_errno($conn) .") " .mysqli_error($conn);

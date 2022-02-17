@@ -11,5 +11,8 @@ if ($conn){
     echo "Conexión exitosa!<br/>";
     echo "<b>BD: $db</b>";
 }
+else{
+    echo "Error (" .mysqli_errno($conn) .") " .mysqli_error($conn);
+}
 mysqli_close($conn);
 
