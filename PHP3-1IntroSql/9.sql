@@ -1,0 +1,47 @@
+DROP DATABASE IF EXISTS bookorama;
+
+CREATE DATABASE bookorama;
+USE bookorama;
+
+CREATE TABLE customers (
+
+	customerid INT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
+	name VARCHAR(50) NOT NULL,
+	address VARCHAR(50) NOT NULL,
+	city VARCHAR(50) NOT NULL
+
+);
+
+CREATE TABLE orders (
+
+	orderid INT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
+	customerid INT UNSIGNED NOT NULL,
+	amount	REAL (6,2),
+	date DATE NOT NULL	
+
+);
+
+CREATE TABLE books(
+
+	isbn VARCHAR(50) NOT NULL PRIMARY KEY,
+	author VARCHAR(50),
+	title VARCHAR(50),
+	price REAL(6,2)
+
+);
+
+CREATE TABLE order_items(
+
+	orderid INT UNSIGNED NOT NULL,
+	isbn VARCHAR(50) NOT NULL,
+	quantity TINYINT UNSIGNED,
+	PRIMARY KEY (orderid, isbn)
+
+);
+
+CREATE TABLE books_reviews(
+
+	isbn VARCHAR(50) NOT NULL PRIMARY KEY,
+	review VARCHAR(100)
+
+);

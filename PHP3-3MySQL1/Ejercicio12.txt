@@ -1,0 +1,7 @@
+Los datos quedan registrados correctamente enla tabla books.
+
+No se puede introducir dos libros con el mismo ISBN porque es clave primaria.
+
+Los campos author, price, title en mi tabla books están como NULL, por tanto,
+si se podrían introducir. No obstante, mi formulario no permite que se introduzcan
+si no están todos rellenados.
