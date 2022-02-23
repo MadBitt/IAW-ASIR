@@ -14,8 +14,8 @@
                 <?php
                 //Datos de conexión mysql
                 $server="localhost";
-                $user="root";
-                $pass="1234";
+                $user="alumno";
+                $pass="alumno";
                 $db="prueba";
                 $conn= mysqli_connect($server, $user, $pass, $db);
 
