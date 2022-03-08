@@ -95,7 +95,7 @@ echo "</table>";
 
 //Insertar matdades
 
-//Conexión a base de datos
+//Conexión a base de datosC 
 
 ////Esquema conexión base de datos
     $server="localhost";
@@ -114,24 +114,52 @@ if ($link) {
         $sql = "DESC datosDB"; //cambiar a la tabla que se quiera
         mysqli_query($link, $sql);
         $columnas = mysqli_affected_rows($link);
+        
+        $sql1 = "DESC estadisticasDB"; //cambiar a la tabla que se quiera
+        mysqli_query($link, $sql1);
+        $columnas1 = mysqli_affected_rows($link);
+        
 
 
         $sentencia = "INSERT INTO datosDB VALUES (";
+        $sentencia1 = "INSERT INTO estadisticasDB VALUES (";
+    
 
 
 
         for ($columna = 0; $columna < $columnas; $columna++) {
 
-            if ($columna != $columnas - 1) {
+            if ($columna != $columnas -1) {
                 $sentencia .= "'" . $datos[$fila][$columna] . "',";
             } else {
                 $sentencia .= "'" . $datos[$fila][$columna] . "')";
             }
+           
+            
         }
+        
+        for ($columna = 0; $columna < $columnas1; $columna++) {
+
+            if ($columna != $columnas1 -1) {
+                $sentencia1 .= "'" . $estadisticas[$fila][$columna] . "',";
+            } else {
+                $sentencia1 .= "'" . $estadisticas[$fila][$columna] . "')";
+            }
+           
+            
+        }
+        
         if (mysqli_query($link, $sentencia)) {
             $contador++;
         } else {
             echo "Error (" . mysqli_errno($link) . ") " . mysqli_error($link);
+            echo "<p/>";
+        }
+        if (mysqli_query($link, $sentencia1)) {
+            $contador++;
+        } else {
+            echo "Error (" . mysqli_errno($link) . ") " . mysqli_error($link);
+            echo "<p/>";
         }
     }
 } else {
